@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Search, Home as HomeIcon, FileText, Map, Calendar, ArrowRight } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
+import CambridgeImg from '../assets/cambridge.jpeg';
+import communityImg from '../assets/community.jpeg';
 
 const Home = () => {
     const containerVariants = {
@@ -27,7 +29,7 @@ const Home = () => {
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-primary/80 mix-blend-multiply z-10" />
                     <img
-                        src="https://images.unsplash.com/photo-1506195546237-7a1650b8f43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                        src={CambridgeImg}
                         alt="Cambridge"
                         className="w-full h-full object-cover"
                     />
@@ -141,7 +143,7 @@ const Home = () => {
                             <div className="absolute -left-4 -top-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
                             <div className="absolute -right-4 -bottom-4 w-32 h-32 bg-secondary/5 rounded-full blur-2xl"></div>
                             <img
-                                src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                                src={communityImg}
                                 alt="Cambridge Community"
                                 className="rounded-2xl shadow-premium relative z-10 w-full"
                             />
