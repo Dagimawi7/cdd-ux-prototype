@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Calendar as CalendarIcon, MapPin, Clock, Filter, ChevronDown, List, Grid } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
@@ -64,9 +63,9 @@ const CalendarView = ({ events }) => {
         <div className="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden">
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-neutral-200">
-                <button className="p-2 hover:bg-neutral-100 rounded-full"><ChevronDown className="w-5 h-5 rotate-90" /></button>
+                <button className="p-2 hover:bg-neutral-100 rounded-full" aria-label="Previous Month"><ChevronDown className="w-5 h-5 rotate-90" /></button>
                 <div className="text-lg font-bold">December 2025</div>
-                <button className="p-2 hover:bg-neutral-100 rounded-full"><ChevronDown className="w-5 h-5 -rotate-90" /></button>
+                <button className="p-2 hover:bg-neutral-100 rounded-full" aria-label="Next Month"><ChevronDown className="w-5 h-5 -rotate-90" /></button>
             </div>
 
             {/* Days Header */}
@@ -119,28 +118,14 @@ const Events = () => {
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-12 gap-6">
                 <div>
-                    <motion.h1
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="text-4xl font-display font-bold text-neutral-900 mb-4"
-                    >
+                    <h1 className="text-4xl font-display font-bold text-neutral-900 mb-4">
                         Community Events
-                    </motion.h1>
-                    <motion.p
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="text-lg text-neutral-600 max-w-2xl"
-                    >
+                    </h1>
+                    <p className="text-lg text-neutral-600 max-w-2xl">
                         Join public hearings, workshops, and community meetings. Be part of the conversation.
-                    </motion.p>
+                    </p>
                 </div>
-                <motion.div
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="flex bg-white p-1 rounded-lg border border-neutral-200 shadow-sm"
-                >
+                <div className="flex bg-white p-1 rounded-lg border border-neutral-200 shadow-sm">
                     <button
                         onClick={() => setViewMode('list')}
                         className={cn(
@@ -159,7 +144,7 @@ const Events = () => {
                     >
                         <CalendarIcon className="w-4 h-4 mr-2" /> Calendar
                     </button>
-                </motion.div>
+                </div>
             </div>
 
             {/* Filters (Only show in List view for simplicity, or both if preferred) */}
@@ -184,19 +169,9 @@ const Events = () => {
 
             {/* Content Switcher */}
             {viewMode === 'list' ? (
-                <motion.div
-                    layout
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                >
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredEvents.map((event) => (
-                        <motion.div
-                            layout
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.9 }}
-                            transition={{ duration: 0.3 }}
-                            key={event.id}
-                        >
+                        <div key={event.id}>
                             <Card className="h-full p-0 overflow-hidden flex flex-col hover:border-primary/30 group">
                                 {/* Image Header */}
                                 <div className="relative h-48 overflow-hidden">
@@ -244,21 +219,18 @@ const Events = () => {
                                     </Button>
                                 </div>
                             </Card>
-                        </motion.div>
+                        </div>
                     ))}
                     {filteredEvents.length === 0 && (
                         <div className="col-span-full text-center py-20 bg-neutral-50 rounded-2xl border border-dashed border-neutral-200">
                             <p className="text-neutral-500">No events found in this category.</p>
                         </div>
                     )}
-                </motion.div>
+                </div>
             ) : (
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                >
+                <div>
                     <CalendarView events={EVENTS_DATA} />
-                </motion.div>
+                </div>
             )}
         </div>
     );

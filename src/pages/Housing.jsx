@@ -1,17 +1,11 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Home, Info, ArrowRight } from 'lucide-react';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 
 const Housing = () => {
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            className="container mx-auto px-4 py-12 md:py-20"
-        >
+        <div className="container mx-auto px-4 py-12 md:py-20">
             <div className="max-w-4xl mx-auto">
                 <div className="flex items-center gap-4 mb-6">
                     <div className="p-3 bg-blue-100/50 rounded-2xl text-blue-600">
@@ -52,7 +46,7 @@ const Housing = () => {
                     </Card>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 };
 

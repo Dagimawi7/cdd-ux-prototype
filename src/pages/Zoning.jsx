@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Map as MapIcon, Layers, Search } from 'lucide-react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import Card from '../components/ui/Card';
@@ -26,12 +25,7 @@ const Zoning = () => {
     const center = [42.3736, -71.1097];
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            className="container mx-auto px-4 py-12 md:py-20"
-        >
+        <div className="container mx-auto px-4 py-12 md:py-20">
             <div className="max-w-6xl mx-auto">
                 <div className="flex items-center gap-4 mb-6">
                     <div className="p-3 bg-purple-100/50 rounded-2xl text-purple-600">
@@ -105,7 +99,8 @@ const Zoning = () => {
                     </Card>
                 </div>
             </div>
-        </motion.div>
+        </div>
     );
 };
+
 export default Zoning;

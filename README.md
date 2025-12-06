@@ -1,16 +1,36 @@
-# React + Vite
+# Cambridge CDD UX Prototype
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This project is a modern redesign of the Cambridge Community Development Department (CDD) website. The goal was to take a complex government site and make it **easy, accessible, and friendly** for all residents.
 
-Currently, two official plugins are available:
+Instead of confusing menus and jargon, this prototype organizes everything by what users actually want to do—finding housing, getting permits, or checking zoning maps.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Improvements
+*   **User-Centric Design:** Navigation is built around tasks (Housing, Permits, Zoning) rather than internal departments.
+*   **Interactive Maps:** A fully interactive zoning map replaces static PDFs, making it easier to explore the city.
+*   **Accessible & Clear:** We used high-contrast colors, clear fonts, and "plain language" to ensure everyone can use the site.
+*   **Mobile First:** The design works perfectly on phones, featuring a responsive menu and touch-friendly buttons.
+*   **Instant Search:** A prominent search bar allows users to jump straight to what they need.
+*   **Fast Performance:** The site is optimized to load quickly, respecting the user's time.
 
-## React Compiler
+## Technologies Used
+*   **React:** For a snappy, dynamic user interface.
+*   **Tailwind CSS:** For beautiful, custom styling without the bloat.
+*   **Leaflet Maps:** For the interactive zoning experience.
+*   **Vite:** For lightning-fast development and building.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How to Run This Project
+1.  **Install Dependencies:**
+    ```bash
+    npm install
+    ```
+2.  **Start the Server:**
+    ```bash
+    npm run dev
+    ```
+3.  **View styles:**
+    Open your browser to the local link provided (usually `http://localhost:5173`).
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+*Designed with ❤️ for the City of Cambridge.*

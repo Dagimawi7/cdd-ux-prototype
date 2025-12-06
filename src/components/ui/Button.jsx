@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { cn } from '../../lib/utils';
 import { Loader2 } from 'lucide-react';
 
@@ -29,12 +28,10 @@ const Button = React.forwardRef(({
     };
 
     return (
-        <motion.button
+        <button
             ref={ref}
-            whileTap={{ scale: 0.98 }}
-            whileHover={{ scale: 1.02 }}
             className={cn(
-                'inline-flex items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ring-offset-white',
+                'inline-flex items-center justify-center rounded-lg font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ring-offset-white active:scale-95 transition-transform duration-100',
                 variants[variant],
                 sizes[size],
                 className
@@ -44,7 +41,7 @@ const Button = React.forwardRef(({
         >
             {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
             {children}
-        </motion.button>
+        </button>
     );
 });
 
