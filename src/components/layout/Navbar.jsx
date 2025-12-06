@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Menu, X } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import Button from '../ui/Button';
+import CDDLogo from '../../assets/CDD.jpeg';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -44,8 +45,12 @@ const Navbar = () => {
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
                     <Link to="/" className="flex items-center space-x-3 group">
-                        <div className="bg-primary text-white p-2.5 rounded-xl shadow-lg shadow-primary/20 transition-transform group-hover:scale-105">
-                            <span className="font-display font-bold text-xl tracking-tighter">CDD</span>
+                        <div className="bg-white p-1 rounded-full shadow-lg shadow-primary/20 transition-transform group-hover:scale-105">
+                            <img
+                                src={CDDLogo}
+                                alt="Cambridge CDD Logo"
+                                className="w-10 h-10 object-cover rounded-full"
+                            />
                         </div>
                         <div className="hidden md:block">
                             <h1 className="text-lg font-bold text-neutral-900 leading-none">Cambridge</h1>
